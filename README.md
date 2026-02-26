@@ -49,7 +49,7 @@ We manually modify the `item_id` to `6` and set the `item_amount` to `1`.
 The **Iced Out Magic Wand** is too expensive. We can manipulate our balance by exploiting a lack of server-side validation on the `item_amount`.
 
 **The Exploit:**
-By sending a negative value for the amount, the total cost becomes negative, allowing us to gain money instead of losing.
+By sending a negative value for the amount, the total cost becomes negative, allowing us to gain money instead of losing it.
 
 ![Negative Amount Request](https://github.com/user-attachments/assets/835db283-31a9-443c-b825-c4c0fce31dca)
 
@@ -80,7 +80,7 @@ Purchasing the wand grants **Part 2 of the Flag**.
 ---
 
 ## 🍪 Phase 3: Cookie Manipulation & Admin Access
-The final item, **Elixir Vitae**, has a price of `None`, breaking the checkout. We must gain admin access to fix the price.
+The final item, **Elixir Vitae**, has a price of `None`, breaking the cart system.
 ![Purchase Error (None Price)](https://github.com/user-attachments/assets/070db45b-c1f7-4910-ba46-a2ec9012c130)
 
 **The Exploit:**
@@ -102,7 +102,7 @@ However, when we try the username `admin`, the error message changes, confirming
 With the confirmed username, we can bypass the login logic entirely by spoofing the cookie.
 We craft the new cookie: `{"user": "admin", "loggedIn": true}` (Base64: `eyJ1c2VyIjogImFkbWluIiwgImxvZ2dlZEluIjogdHJ1ZX0=`).
 
-By refreshing the main page with our new credentials injected, we bypassed the login gate and gained full access to the administrative dashboard.
+By refreshing the main page with our new credentials injected, we bypassed the login gate and gained full access to an administrative dashboard.
 
 ![Admin Panel](https://github.com/user-attachments/assets/5d60472e-d331-49e2-9a97-62d05695979a)
 
