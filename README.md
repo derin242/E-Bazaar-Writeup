@@ -11,7 +11,7 @@ The **E-Bazaar** was a spotlight challenge for the 2026 ISSessions FantasyCTF. D
 ![Challange Banner](https://github.com/user-attachments/assets/2182e93f-d2bf-4b1c-ad0f-a4db56c515c9)
 
 ### The Objective
-Looking at the index page, the goal is to purchase items that seem unobtainable due to hidden IDs, high prices, or broken logic.
+Looking at the index page, the goal is to purchase items that seem unobtainable due to high prices or broken logic.
 
 ![Index Page](https://github.com/user-attachments/assets/0fee0c15-8c6f-4828-8bcb-fd4dc885946d)
 
