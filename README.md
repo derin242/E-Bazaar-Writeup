@@ -49,7 +49,7 @@ We manually modify the `item_id` to `6` and set the `item_amount` to `1`.
 The **Iced Out Magic Wand** is too expensive. We can manipulate our balance by exploiting a lack of server-side validation on the `item_amount`.
 
 **The Exploit:**
-By sending a negative value for the amount, the total cost becomes negative, adding gold to our account balance.
+By sending a negative value for the amount, the total cost becomes negative, allowing us to gain money instead of losing.
 
 ![Negative Amount Request](https://github.com/user-attachments/assets/835db283-31a9-443c-b825-c4c0fce31dca)
 
