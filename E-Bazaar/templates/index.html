@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<head>
+  <title>Market</title>
+</head>
+<body>
+  <h1>Welcome to E-Bazaar!</h1>
+  <h2>Balance: {{ balance  }}$</h2>
+    <form method="POST" action="/cart/update">
+{% for id, name in items_id.items() %}
+  {% if id != "6" %}
+  <div class="item-row">
+    <label>{{ name }} <strong>({{ items_price[id] }}$)</strong></label>
+    <div>
+      <input type="number" name="item_amount" value="0" min="0" step="1" required>
+      <input type="hidden" name="item_id" value="{{ id }}">
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+
+      <button type="submit">Add to cart</button>
+      <button type="submit" name="reset_cart" value="1">Reset Cart</button>   
+    </form>
+  <h2>Cart</h2>
+  <pre>{{ cart }}</pre>
+  <form method="POST" action="/checkout">
+    <button type="submit">Checkout</button>
+    <input type="hidden" name="636172745F656D707479" value="Z29vZGx1Y2s="><br><br>
+    <input type="hidden" name="666f7263655f636865636b6f7574" value="RmFsc2U="><br><br>
+  </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <input type="hidden" name="item_id" value="6"><br><br> -->

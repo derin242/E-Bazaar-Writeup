@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<head>
+  <title>Market</title>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+    {{items_id}}<br>
+    {{items_price}}
+    <form method="POST" action="/items/edit_admin">
+      <h3>Item ID:</h3><input type="number" name="id" min="1" step="1" max="6">
+      <h3>Set Price:</h3><input type="number" name="set_price" min="0" step="1">
+
+      <button type="submit">Submit changes</button> 
+    </form>
+</body>
+</html>

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Quicksand:wght@400;600&display=swap');
+
+:root {
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 40, 0.4);
+    --bg-dark: #0a0b0d;
+    --panel-bg: #16181d;
+    --border: #2d3139;
+    --text: #e0e0e0;
+    --danger: #ff4d4d;
+    --danger-glow: rgba(255, 77, 77, 0.4);
+}
+
+/* 1. THE HEADERS */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 4rem;
+    color: var(--gold);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px var(--gold-glow), 2px 2px 4px #000;
+    animation: titleEntrance 1.2s ease-out;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--gold);
+    text-align: center;
+    letter-spacing: 3px;
+    margin: 40px 0 20px 0;
+    width: 100%;
+}
+
+/* Balance header */
+body > h2:nth-of-type(1) {
+    color: #4cd137;
+    text-shadow: 0 0 10px rgba(76, 209, 55, 0.2);
+}
+
+/* 2. LAYOUT & CENTERING */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 60px 20px;
+}
+
+/* 3. CART */
+pre {
+    width: 100%;
+    max-width: 550px;
+    background: #0d0e12; 
+    color: #cbd5e0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--gold); 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+    margin: 0 auto 30px auto;
+    white-space: pre-wrap;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* overlay for the Cart */
+pre::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(212, 175, 55, 0.02) 50%, transparent 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+}
+
+/* 4. FORM & ITEM ROWS */
+form {
+    width: 100%;
+    max-width: 550px;
+    background: var(--panel-bg);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+form[action="/cart/update"] br { display: none; }
+
+form label {
+    display: block;
+    padding: 20px 0 10px 0;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+form label:hover {
+    color: var(--gold);
+    padding-left: 10px;
+}
+
+input[type="number"] {
+    float: right;
+    margin-top: -38px;
+    width: 65px;
+    background: #000;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+}
+
+/* 5. BUTTONS*/
+button {
+    width: 100%;
+    padding: 18px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    clear: both;
+}
+
+button[type="submit"]:not([name="reset_cart"]) {
+    background: var(--gold);
+    color: #121417;
+}
+
+/* RESET BUTTON EFFECT */
+button[name="reset_cart"] {
+    background: rgba(255, 77, 77, 0.05);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+}
+
+button[name="reset_cart"]:hover {
+    background: var(--danger);
+    color: white;
+    box-shadow: 0 0 20px var(--danger-glow);
+    transform: translateY(-2px) scale(1.02);
+}
+
+button[type="submit"]:not([name="reset_cart"]):hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* 6. ADMIN & CHECKOUT INPUTS */
+input[type="text"], input[type="password"], input[name="username"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #000;
+    border: 1px solid var(--border);
+    color: white;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+@keyframes titleEntrance {
+    from { opacity: 0; letter-spacing: 20px; transform: scale(1.1); }
+    to { opacity: 1; letter-spacing: 8px; transform: scale(1); }
+}

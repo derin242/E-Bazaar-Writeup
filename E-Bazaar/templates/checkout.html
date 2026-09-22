@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    height: 100vh;          
+    width: 100vw;           
+    overflow: hidden;       
+  }
+
+  h2 {
+    margin-bottom: 20px;   
+  }
+  </style>
+
+<h1 style="font-size: 2.15em;">{{ message[0] }}</h1>
+<h2>{{ message[1] }}</h2>
+  <form method="GET" action="/">
+    <button type="submit">Back</button>
+  </form>
+</html>
